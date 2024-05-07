@@ -2,6 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.active {
-  color: red;
+a.active {
+  @apply text-black;
 }
