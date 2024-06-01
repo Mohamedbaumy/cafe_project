@@ -1,12 +1,20 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-    "./node_modules/react-tailwindcss-datepicker/dist/index.esm.js",
-  ],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        ctail: "#12a0aa",
+        cgreen: "#30C78A",
+        corange: "#FE9144",
+        cblue: "#305DAB",
+        dark: {
+          100: "#000",
+          200: "#0f1117",
+        },
+      },
+    },
   },
+  darkMode: "class",
   plugins: [],
 };

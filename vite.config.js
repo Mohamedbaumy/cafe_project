@@ -9,6 +9,7 @@ export default defineConfig({
     alias: {
       "@": resolve("src"),
       "@features": resolve("src/features"),
+      "@components": resolve("src/components"),
     },
   },
 });

@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-a.active {
-  @apply text-black;
+
+.ant-layout-sider {
+  min-height: 100vh;
+  position: fixed;
 }

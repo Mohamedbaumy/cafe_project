@@ -2,34 +2,42 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "@features/layout/App";
 
-// css
-import "react-dropdown-tree-select/dist/styles.css";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
 import "./index.css";
 
 // pages
 import Home from "@features/home/Home";
+import Page from "@features/page/Page";
+
+const queryClient = new QueryClient();
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { Axios } from "axios";
+
+// Axios.defaults.baseURL = "http://127.0.0.1:8000/api";
 
 const router = createBrowserRouter([
-	{
-		path: "/",
-		element: <App />,
-		children: [
-			{
-				path: "/",
-				element: <Home />,
-			},
-			{
-				path: "/page",
-				element: <div>Page</div>,
-			},
-		],
-	},
+  {
+    path: "/",
+    element: <App />,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
+      {
+        path: "/page",
+        element: <Page />,
+      },
+    ],
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-	<React.StrictMode>
-		<RouterProvider router={router} />
-	</React.StrictMode>,
+  <React.StrictMode>
+    <QueryClientProvider client={queryClient}>
+      <RouterProvider router={router} />
+    </QueryClientProvider>
+  </React.StrictMode>
 );
